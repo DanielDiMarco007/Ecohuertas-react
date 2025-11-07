@@ -1,16 +1,57 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Flujo de datos unidireccional
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+En **React**, el flujo de datos es **unidireccional**, es decir, la información viaja **desde los componentes padres hacia los hijos** mediante *props*.
+En **EcoHuertas**, este principio se aplica pasando datos como el nombre de las plantas, su estado o las acciones de cultivo desde un componente contenedor principal hacia los subcomponentes.
+Esto garantiza una estructura más predecible y facilita el mantenimiento, ya que el flujo de la información siempre tiene una dirección clara.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Rol del estado (`useState`) y su influencia en el renderizado
 
-## Expanding the ESLint configuration
+El hook **`useState`** se utiliza para manejar información dinámica dentro de los componentes.
+Cada vez que el estado cambia, **React vuelve a renderizar** el componente que depende de ese estado, actualizando solo las partes necesarias del DOM.
+Esto hace que la interfaz sea **reactiva y eficiente**, sin necesidad de manipular el DOM manualmente.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Importancia de separar la UI en componentes reutilizables y puros
+
+Dividir la interfaz en **componentes reutilizables** permite:
+
+* Mantener el código más ordenado y fácil de entender.
+* Reutilizar elementos comunes (botones, tarjetas, encabezados) en diferentes partes del proyecto.
+* Reducir errores y mejorar la escalabilidad.
+
+Los **componentes puros** (aquellos que dependen solo de sus props y no tienen efectos secundarios) son más predecibles y fáciles de probar.
+
+
+---
+
+##  Ventajas del JSX declarativo frente al DOM imperativo
+
+Usar **JSX declarativo** significa describir **qué queremos que se muestre**, y no **cómo hacerlo paso a paso**.
+Esto tiene varias ventajas:
+
+* El código es más legible y cercano a la lógica de la aplicación.
+* React se encarga de las actualizaciones del DOM de forma óptima.
+* Evita errores comunes al manipular el DOM manualmente con métodos como `document.createElement()` o `appendChild()`.
+
+
+
+---
+
+##  Posibles mejoras con nuevos componentes
+
+Para mejorar la app sin romper su coherencia visual ni lógica, se podrían añadir:
+
+1. **`ComponenteClima`** – Muestra el clima actual y cómo influye en las huertas.
+2. **`ComponenteConsejos`** – Lista de recomendaciones ecológicas y sostenibles.
+3. **`ComponenteEstadisticas`** – Gráficas o datos sobre el crecimiento de las plantas o el ahorro ambiental generado.
+
+
+
+
+✳️ *Desarrollado con amor y conciencia ecológica por el equipo de EcoHuertas.*
