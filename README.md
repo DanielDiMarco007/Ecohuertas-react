@@ -54,4 +54,3 @@ Para mejorar la app sin romper su coherencia visual ni lógica, se podrían aña
 
 
 
-✳️ *Desarrollado con amor y conciencia ecológica por el equipo de EcoHuertas.*
